@@ -1,0 +1,33 @@
+.EffectsContainer {
+  display: flex;
+}
+.EffectsLeft {
+  display: flex;
+  flex: 1;
+}
+.EffectsMid {
+  display: flex;
+  flex: 6;
+
+  flex-direction: column;
+  background-color: aqua;
+}
+.EffectsRight {
+  display: flex;
+  flex: 1;
+}
+.EffectsTextBox1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.EffectsTextBox2 {
+  width: 100%;
+  background-color: red;
+}
+.cardsBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

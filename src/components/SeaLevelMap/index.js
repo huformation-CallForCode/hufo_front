@@ -6,7 +6,7 @@ import { fromLonLat } from "ol/proj";
 import { Raster as RasterSource, TileJSON } from "ol/source";
 import XYZ from "ol/source/XYZ";
 
-class App extends Component {
+class SeaLevelMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,4 +114,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default SeaLevelMap;

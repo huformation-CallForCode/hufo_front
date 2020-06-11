@@ -1,0 +1,38 @@
+.AboutContainer {
+  /* background-color: red; */
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+}
+
+.AboutHL {
+  height: 2px;
+  width: 500px;
+  background-color: grey;
+}
+
+.AboutTitle {
+  padding-bottom: 20px;
+}
+
+.AboutTextBox {
+  padding-bottom: 45px;
+}
+
+.AboutMid {
+  display: flex;
+  flex: 5;
+  align-items: center;
+  /* background-color: red; */
+  flex-direction: column;
+}
+
+.AboutLeft {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.AboutRight {
+  display: flex;
+  flex: 1;
+}

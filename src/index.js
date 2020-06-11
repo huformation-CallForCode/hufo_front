@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { EntirePage } from "./pages";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EntirePage />
   </React.StrictMode>,
   document.getElementById("root")
 );
