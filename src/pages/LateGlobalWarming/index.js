@@ -34,7 +34,7 @@ class LateGlobalWarming extends React.Component {
     }
   };
 
-  renderDailyCard = async () => {
+  renderDailyCard = () => {
     // try {
     //   const config = {}
 
