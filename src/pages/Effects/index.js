@@ -6,6 +6,7 @@ class Effects extends React.Component {
   constructor() {
     super();
     this.state = {};
+    this.effectsRefs = React.createRef();
   }
   renderCard = () => {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -13,9 +14,13 @@ class Effects extends React.Component {
       return <EffectCard></EffectCard>;
     });
   };
+
+  componentDidMount() {
+    this.props.getRefsFromEffects(this.effectsRefs);
+  }
   render() {
     return (
-      <div class="EffectsContainer">
+      <div class="EffectsContainer" ref={this.effectsRefs}>
         <div class="EffectsLeft"></div>
         <div class="EffectsMid">
           <div class="EffectsTextBox1">

@@ -6,12 +6,22 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+<<<<<<< HEAD
     "chart.js": "^2.9.3",
+=======
+    "axios": "^0.19.2",
+>>>>>>> dbb6a59445871e139e7734846ab65fa92502db0b
     "mapbox-gl": "^1.10.1",
+    "moment": "^2.26.0",
     "ol": "^6.3.1",
     "react": "^16.13.1",
+<<<<<<< HEAD
     "react-chartjs-2": "^2.9.0",
+=======
+    "react-calendar": "^3.1.0",
+>>>>>>> dbb6a59445871e139e7734846ab65fa92502db0b
     "react-dom": "^16.13.1",
+    "react-dropdown": "^1.7.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {

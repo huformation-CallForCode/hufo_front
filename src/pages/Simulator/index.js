@@ -3,15 +3,19 @@ import "./index.css";
 import { SeaLevelMap } from "../../components";
 
 class Simulator extends React.Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {};
+    this.simulRefs = React.createRef();
+  }
+
+  componentDidMount() {
+    this.props.getRefsFromSimulator(this.simulRefs);
   }
 
   render() {
     return (
-      <div class="SimulContainer">
+      <div class="SimulContainer" ref={this.simulRefs}>
         <div class="SimulLeft"></div>
         <div class="SimulMid">
           <SeaLevelMap />
