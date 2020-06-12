@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./index.css";
 import { EffectCard } from "../../components";
-
-class Effects extends React.Component {
+class LateGlobalWarming extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
+
   renderCard = () => {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     return arr.map(({ index }) => {
@@ -15,23 +15,23 @@ class Effects extends React.Component {
   };
   render() {
     return (
-      <div class="EffectsContainer">
-        <div class="EffectsLeft"></div>
-        <div class="EffectsMid">
-          <div class="EffectsTextBox1">
+      <div class="WarmingContainer">
+        <div class="WarmingLeft"></div>
+        <div class="WarmingMid">
+          <div class="WarmingTextBox1">
             <h3>현재 지구의 표면 온도</h3>
             <text>24.01도</text>
           </div>
-          <div class="EffectsTextBox2">
-            <text class="EffectsText">0.01도 증가하면</text>
+          <div class="WarmingTextBox2">
+            <text class="WarmingText">0.01도 증가하면</text>
           </div>
           <div class="cardsBox">{this.renderCard()}</div>
-          <div class="EffectsCards"></div>
+          <div class="WarmingCards"></div>
         </div>
-        <div class="EffectsRight"></div>
+        <div class="WarmingRight"></div>
       </div>
     );
   }
 }
 
-export default Effects;
+export default LateGlobalWarming;

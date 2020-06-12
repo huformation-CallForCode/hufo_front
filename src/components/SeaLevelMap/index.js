@@ -5,7 +5,7 @@ import { Image as ImageLayer, Tile as TileLayer } from "ol/layer";
 import { fromLonLat } from "ol/proj";
 import { Raster as RasterSource, TileJSON } from "ol/source";
 import XYZ from "ol/source/XYZ";
-
+import "./index.css";
 class SeaLevelMap extends Component {
   constructor(props) {
     super(props);
@@ -87,14 +87,29 @@ class SeaLevelMap extends Component {
     return (
       <div>
         <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <h3>해수면 상승 시뮬레이터</h3>
+        </div>
+        <div
           id="map"
           class="map"
           style={{
             width: 800,
-            height: 400,
+            height: 800,
           }}
         ></div>
-        <div>
+        <div
+          class="SeaLevelBar"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <br />
           <label>
             Sea level
             <input

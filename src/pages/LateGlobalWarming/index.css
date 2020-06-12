@@ -1,28 +1,28 @@
-.EffectsContainer {
+.WarmingContainer {
   display: flex;
   padding-top: 200px;
   padding-bottom: 200px;
 }
-.EffectsLeft {
+.WarmingLeft {
   display: flex;
   flex: 1;
 }
-.EffectsMid {
+.WarmingMid {
   display: flex;
   flex: 6;
 
   flex-direction: column;
 }
-.EffectsRight {
+.WarmingRight {
   display: flex;
   flex: 1;
 }
-.EffectsTextBox1 {
+.WarmingTextBox1 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.EffectsTextBox2 {
+.WarmingTextBox2 {
   width: 100%;
 }
 .cardsBox {
@@ -32,7 +32,7 @@
   justify-content: space-around;
 }
 
-.EffectsText {
+.WarmingText {
   font-size: 25px;
   font-weight: bold;
 }

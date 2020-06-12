@@ -1,7 +1,18 @@
 .CardContainer {
-  width: 320px;
-  height: 160px;
+  width: 305px;
+  height: 145px;
   border-style: solid;
   border-width: thin;
   border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-left: 5px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  background-image: url("../images/bear.jpg");
+}
+
+.CardText {
+  color: white;
 }

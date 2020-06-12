@@ -1,0 +1,21 @@
+.SimulContainer {
+  display: flex;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  flex: 1;
+}
+
+.SimulLeft {
+  display: flex;
+  flex: 1;
+}
+
+.SimulMid {
+  display: flex;
+  flex: 1;
+}
+
+.SimulRight {
+  display: flex;
+  flex: 1;
+}

@@ -8,7 +8,17 @@ class EffectCard extends React.Component {
   }
 
   render() {
-    return <div class="CardContainer"></div>;
+    return (
+      <div class="CardContainer">
+        <div>
+          <text class="CardText">북극족 가족의 서식처가</text>
+        </div>
+        <div class="fillSpace"></div>
+        <div>
+          <text class="CardText">35% 줄어듭니다</text>
+        </div>
+      </div>
+    );
   }
 }
 

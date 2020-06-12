@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { SeaLevelMap, TopNav } from "../../components";
-import { About, Effects } from "../../pages";
+import {
+  About,
+  Effects,
+  Simulator,
+  LateGlobalWarming,
+  Contributing,
+} from "../../pages";
 
 import "./index.css";
 
@@ -12,15 +18,16 @@ class EntirePage extends React.Component {
 
   render() {
     return (
-      <body>
+      <div>
         <TopNav />
-
         <div class="container">
           <About />
           <Effects />
-          <SeaLevelMap />
+          <LateGlobalWarming />
+          <Simulator />
+          <Contributing />
         </div>
-      </body>
+      </div>
     );
   }
 }

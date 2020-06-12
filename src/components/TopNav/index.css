@@ -7,11 +7,15 @@
   height: 95px;
   display: flex;
   width: 100%;
+  margin-top: -8px;
+  margin-left: -8px;
+  padding-bottom: auto;
   flex-direction: row;
   align-items: center;
   box-shadow: inset 0 -7px 4px -7px rgba(0, 0, 0, 0.4);
   position: fixed;
   background-color: white;
+  z-index: 99;
 }
 
 .homeTitle {
@@ -29,6 +33,6 @@
 .topMenu .menuLink {
   text-decoration: none;
   color: #2d2d2d;
-
+  cursor: pointer;
   font-weight: bold;
 }
