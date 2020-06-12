@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import "./index.css";
 import { EffectCard } from "../../components";
+import axios from "axios";
+import { URL_GET_DAILY_CARDS, URL_GET_EVENT_CARDS } from "../../globals/apis";
 class LateGlobalWarming extends React.Component {
   constructor() {
     super();
     this.state = {
       daily: true,
     };
+    this.WarmingRefs = React.createRef();
+  }
+
+  componentDidMount() {
+    this.props.getRefsFromLateGlobalWarming(this.WarmingRefs);
   }
 
   handleClick = (e) => {
@@ -27,7 +34,16 @@ class LateGlobalWarming extends React.Component {
     }
   };
 
-  renderDailyCard = () => {
+  renderDailyCard = async () => {
+    // try {
+    //   const config = {}
+
+    //   const res = await axios.get()
+    // } catch (error) {
+    //   console.log(error)
+    //   console.error(error)
+    // }
+
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     return arr.map(({ index }) => {
       return <EffectCard></EffectCard>;
@@ -41,7 +57,7 @@ class LateGlobalWarming extends React.Component {
   };
   render() {
     return (
-      <div class="WarmingContainer">
+      <div class="WarmingContainer" ref={this.WarmingRefs}>
         <div class="WarmingLeft"></div>
         <div class="WarmingMid">
           <div class="SelectDailyEvent">

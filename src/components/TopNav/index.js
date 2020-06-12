@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+
 class TopNav extends React.Component {
   constructor() {
     super();
@@ -10,25 +11,103 @@ class TopNav extends React.Component {
       WarmingLocation: 0,
       SimulLocation: 0,
       ContriLocation: 0,
+      value: 1,
     };
   }
+
+  onScroll = () => {
+    const scrollTop = window.scrollY;
+    if (
+      this.state.value === 1 &&
+      scrollTop > this.props.EffectsRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 2,
+      });
+    } else if (
+      this.state.value === 2 &&
+      scrollTop < this.props.EffectsRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 1,
+      });
+    } else if (
+      this.state.value === 2 &&
+      scrollTop > this.props.warmingRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 3,
+      });
+    } else if (
+      this.state.value === 3 &&
+      scrollTop < this.props.warmingRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 2,
+      });
+    } else if (
+      this.state.value === 3 &&
+      scrollTop > this.props.simulRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 4,
+      });
+    } else if (
+      this.state.value === 4 &&
+      scrollTop < this.props.simulRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 3,
+      });
+    } else if (
+      this.state.value === 4 &&
+      scrollTop > this.props.ContributingRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 5,
+      });
+    } else if (
+      this.state.value === 5 &&
+      scrollTop < this.props.ContributingRefs.current.offsetTop
+    ) {
+      this.setState({
+        value: 4,
+      });
+    }
+  };
 
   handleClicked = (e) => {
     const value = e.target.innerHTML;
     if (value === "소개") {
-      window.scrollTo({ top: this.state.AboutLocation, behavior: "smooth" });
+      window.scrollTo(0, this.props.AboutRefs.current.offsetTop);
+      this.setState({
+        value: 1,
+      });
     } else if (value === "현재 지구는?") {
-      window.scrollTo({ top: this.state.EffectsLocation, behavior: "smooth" });
+      window.scrollTo(0, this.props.EffectsRefs.current.offsetTop);
+      this.setState({
+        value: 2,
+      });
     } else if (value === "지구 온도 내리기") {
-      window.scrollTo({ top: this.state.WarmingLocation, behavior: "smooth" });
+      window.scrollTo(0, this.props.warmingRefs.current.offsetTop);
+      this.setState({
+        value: 3,
+      });
     } else if (value === "시뮬레이터") {
-      window.scrollTo({ top: this.state.SimulLocation, behavior: "smooth" });
+      window.scrollTo(0, this.props.simulRefs.current.offsetTop);
+      this.setState({
+        value: 4,
+      });
     } else if (value === "기여하기") {
-      window.scrollTo({ top: this.state.ContriLocation, behavior: "smooth" });
+      window.scrollTo(0, this.props.ContributingRefs.current.offsetTop);
+      this.setState({
+        value: 5,
+      });
     }
   };
 
   componentDidMount() {
+    window.addEventListener("scroll", this.onScroll);
     this.setState({
       AboutLocation: document.querySelector(".AboutContainer").offsetTop,
       EffectsLocation: document.querySelector(".EffectsContainer").offsetTop,
@@ -45,27 +124,57 @@ class TopNav extends React.Component {
         <div class="fillSpace"></div>
         <ul>
           <li>
-            <a class="menuLink" onClick={this.handleClicked}>
+            <a
+              class="menuLink"
+              style={
+                this.state.value === 1 ? { color: "red" } : { color: "black" }
+              }
+              onClick={this.handleClicked}
+            >
               소개
             </a>
           </li>
           <li>
-            <a class="menuLink" onClick={this.handleClicked}>
+            <a
+              class="menuLink"
+              onClick={this.handleClicked}
+              style={
+                this.state.value === 2 ? { color: "red" } : { color: "black" }
+              }
+            >
               현재 지구는?
             </a>
           </li>
           <li>
-            <a class="menuLink" onClick={this.handleClicked}>
+            <a
+              class="menuLink"
+              onClick={this.handleClicked}
+              style={
+                this.state.value === 3 ? { color: "red" } : { color: "black" }
+              }
+            >
               지구 온도 내리기
             </a>
           </li>
           <li>
-            <a class="menuLink" onClick={this.handleClicked}>
+            <a
+              class="menuLink"
+              onClick={this.handleClicked}
+              style={
+                this.state.value === 4 ? { color: "red" } : { color: "black" }
+              }
+            >
               시뮬레이터
             </a>
           </li>
           <li>
-            <a class="menuLink" onClick={this.handleClicked}>
+            <a
+              class="menuLink"
+              onClick={this.handleClicked}
+              style={
+                this.state.value === 5 ? { color: "red" } : { color: "black" }
+              }
+            >
               기여하기
             </a>
           </li>
