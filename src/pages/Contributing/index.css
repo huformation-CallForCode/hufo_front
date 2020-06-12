@@ -36,3 +36,37 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+.DropDown1 {
+  box-shadow: 5px 4px 6px rgba(166, 180, 200, 0.65),
+    -5px -5px 15px rgba(255, 255, 255, 0.75);
+}
+
+.DropDown2 {
+  box-shadow: 5px 4px 6px rgba(166, 180, 200, 0.65);
+  margin-left: 20px;
+}
+
+.DropDownAndCalendarBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.CalendarBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendarbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  padding: 7px;
+  border-radius: 20px;
+  box-shadow: 5px 4px 6px rgba(166, 180, 200, 0.65),
+    -5px -5px 15px rgba(255, 255, 255, 0.75);
+}

@@ -2,9 +2,18 @@ import React, { Component } from "react";
 import "./index.css";
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.AboutRefs = React.createRef();
+  }
+
+  componentDidMount() {
+    this.props.getRefsFromAbout(this.AboutRefs);
+  }
   render() {
     return (
-      <div class="AboutContainer">
+      <div class="AboutContainer" ref={this.AboutRefs}>
         <div class="AboutLeft"></div>
         <div class="AboutMid">
           <div class="AboutTitleBox">
