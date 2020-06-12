@@ -8,14 +8,21 @@ class EffectCard extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+    console.log(data);
     return (
-      <div class="CardContainer">
+      <div
+        class="CardContainer"
+        style={{
+          backgroundImage: `url(${data.image_url})`,
+        }}
+      >
         <div>
-          <text class="CardText">북극족 가족의 서식처가</text>
+          <text class="CardText">{data.title}</text>
         </div>
         <div class="fillSpace"></div>
         <div>
-          <text class="CardText">35% 줄어듭니다</text>
+          <text class="CardText">{data.subtitle}</text>
         </div>
       </div>
     );

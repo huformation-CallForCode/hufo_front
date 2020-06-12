@@ -21,7 +21,6 @@ class Contributing extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state.firstDay.date(), this.state.lastDay.date());
     this.props.getRefsFromContributing(this.ContriRefs);
   }
 
@@ -115,7 +114,7 @@ class Contributing extends React.Component {
           <div class="ContriTextBox2">
             <text class="ContriText">0.01도 증가하면</text>
           </div>
-          <div class="cardsBox">{this.renderCard()}</div>
+          {/* <div class="cardsBox">{this.renderCard()}</div> */}
           <div class="ContriCards"></div>
         </div>
         <div class="ContriRight"></div>

@@ -1,23 +1,53 @@
 import React, { Component } from "react";
 import "./index.css";
 import { EffectCard } from "../../components";
+import axios from "axios";
+import { URL_GET_NAGATIVE_CARDS } from "../../globals/apis";
 
 class Effects extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      nagativeData: [],
+    };
     this.effectsRefs = React.createRef();
   }
-  renderCard = () => {
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    return arr.map(({ index }) => {
-      return <EffectCard></EffectCard>;
-    });
-  };
 
   componentDidMount() {
     this.props.getRefsFromEffects(this.effectsRefs);
+    this._getNagativeData();
   }
+
+  _getNagativeData = async () => {
+    try {
+      const config = {
+        headers: {},
+      };
+
+      const res = await axios.get(URL_GET_NAGATIVE_CARDS, config);
+
+      if (res.status === 200) {
+        this.setState(
+          {
+            nagativeData: res.data.cards,
+          },
+          () => {
+            console.log(this.state.nagativeData, "naga");
+          }
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      console.error(error);
+    }
+  };
+
+  renderCard = () => {
+    return this.state.nagativeData.map((data) => {
+      return <EffectCard data={data}></EffectCard>;
+    });
+  };
+
   render() {
     return (
       <div class="EffectsContainer" ref={this.effectsRefs}>

@@ -8,51 +8,75 @@ class LateGlobalWarming extends React.Component {
     super();
     this.state = {
       daily: true,
+      dailyData: [],
+      eventData: [],
     };
     this.WarmingRefs = React.createRef();
   }
 
   componentDidMount() {
     this.props.getRefsFromLateGlobalWarming(this.WarmingRefs);
+    this._getDailyData();
+    this._getEventData();
   }
 
   handleClick = (e) => {
     if (this.state.daily === true && e.target.innerHTML === "Event") {
-      this.setState(
-        {
-          daily: false,
-        },
-        console.log(this.state.da)
-      );
+      this.setState({
+        daily: false,
+      });
     } else if (this.state.daily === false && e.target.innerHTML === "Daily") {
-      this.setState(
-        {
-          daily: true,
-        },
-        console.log(this.state.daily)
-      );
+      this.setState({
+        daily: true,
+      });
+    }
+  };
+
+  _getDailyData = async () => {
+    try {
+      const config = {
+        headers: {},
+      };
+
+      const res = await axios.get(URL_GET_DAILY_CARDS, config);
+
+      if (res.status === 200) {
+        this.setState({
+          dailyData: res.data.cards,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      console.error(error);
+    }
+  };
+  _getEventData = async () => {
+    try {
+      const config = {
+        headers: {},
+      };
+
+      const res = await axios.get(URL_GET_EVENT_CARDS, config);
+
+      if (res.status === 200) {
+        this.setState({
+          eventData: res.data.cards,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      console.error(error);
     }
   };
 
   renderDailyCard = () => {
-    // try {
-    //   const config = {}
-
-    //   const res = await axios.get()
-    // } catch (error) {
-    //   console.log(error)
-    //   console.error(error)
-    // }
-
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    return arr.map(({ index }) => {
-      return <EffectCard></EffectCard>;
+    return this.state.dailyData.map((data) => {
+      return <EffectCard data={data}></EffectCard>;
     });
   };
   renderEventCard = () => {
-    const arr = [1, 2, 3, 4];
-    return arr.map(({ index }) => {
-      return <EffectCard></EffectCard>;
+    return this.state.eventData.map((data) => {
+      return <EffectCard data={data}></EffectCard>;
     });
   };
   render() {
