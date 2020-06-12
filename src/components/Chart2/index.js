@@ -1,18 +1,30 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
-
+const centiEndPoint = "http://192.168.0.66:8000/temperature_data/";
 class Chart2 extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {centis: []};
+      }
+  
+      async componentDidMount() {
+        let { data: centis } = await axios.get(centiEndPoint, {});
+        this.setState({centis});
+      }
+    
     render(){
-        const centidata = {
-            year:[1880,1881,1882,1883,1884],
-            no_smoth:[2,2,2,2,2],
-            lowess:[1,2,3,4,5]
-        };
-        const low = centidata.lowess;
-        const years = centidata.year;
-        const nosmoth = centidata.no_smoth;
+        const {centis} = this.state;
+        let yearlist = [];
+        let nolist=[];
+        let lowlist=[];
+        for(let i=0; i<centis.length;i++){
+          yearlist.push(centis[i].year);
+          nolist.push(centis[i].no_smooth);
+          lowlist.push(centis[i].lowess);
+        }
+
         const data = {
-            labels: years,
+            labels: yearlist,
             datasets: [{
             label:"Lowess smoothing",
               fill: false,
@@ -32,7 +44,7 @@ class Chart2 extends Component {
               pointHoverBorderWidth: 2,
               pointRadius: 1,
               pointHitRadius: 10,
-              data:low},
+              data:lowlist},
               {
                 label:"Annual mean",
                   fill: false,
@@ -52,7 +64,7 @@ class Chart2 extends Component {
                   pointHoverBorderWidth: 2,
                   pointRadius: 1,
                   pointHitRadius: 10,
-                  data:nosmoth}
+                  data:nolist}
             ]
         };
           
