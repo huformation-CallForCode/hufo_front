@@ -20,7 +20,7 @@
 .ContriTextBox1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 .ContriTextBox2 {
   width: 100%;

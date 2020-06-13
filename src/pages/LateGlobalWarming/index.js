@@ -108,10 +108,17 @@ class LateGlobalWarming extends React.Component {
               Event
             </div>
           </div>
-          <div class="WarmingTextBox1">
-            <h3>일상 생활에서는 무엇을 할 수 있나요?</h3>
-          </div>
-          <div class="cardsBox">
+          {this.state.daily ? (
+            <div class="WarmingTextBox1">
+              <h3>일상 생활에서는 무엇을 할 수 있나요?</h3>
+            </div>
+          ) : (
+            <div class="WarmingTextBox1">
+              <h3>함께 해요!</h3>
+            </div>
+          )}
+
+          <div class="WarmingCardsBox">
             {this.state.daily === true
               ? this.renderDailyCard()
               : this.renderEventCard()}

@@ -9,7 +9,7 @@ class EffectCard extends React.Component {
 
   render() {
     const { data } = this.props;
-    console.log(data);
+    // console.log(data);
     return (
       <div
         class="CardContainer"
@@ -19,9 +19,8 @@ class EffectCard extends React.Component {
       >
         <div>
           <text class="CardText">{data.title}</text>
-        </div>
-        <div class="fillSpace"></div>
-        <div>
+          <br />
+          <br />
           <text class="CardText">{data.subtitle}</text>
         </div>
       </div>

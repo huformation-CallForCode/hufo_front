@@ -92,14 +92,15 @@ class SeaLevelMap extends Component {
             justifyContent: "center",
           }}
         >
-          <h3>해수면 상승 시뮬레이터</h3>
+          <h3 style={{ fontSize: 30 }}>해수면 상승 시뮬레이터</h3>
         </div>
         <div
           id="map"
           class="map"
           style={{
-            width: 800,
-            height: 800,
+            width: 700,
+            height: 700,
+            marginTop: 80,
           }}
         ></div>
         <div
@@ -110,7 +111,12 @@ class SeaLevelMap extends Component {
           }}
         >
           <br />
-          <label>
+          <label
+            style={{
+              fontSize: 30,
+              fontWeight: "bold",
+            }}
+          >
             Sea level
             <input
               id="level"

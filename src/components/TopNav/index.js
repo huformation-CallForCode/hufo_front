@@ -120,7 +120,24 @@ class TopNav extends React.Component {
   render() {
     return (
       <nav class="topMenu">
-        <h1 class="homeTitle">웹사이트 이름</h1>
+        <div style={{ display: "flex", marginLeft: 90 }}>
+          <h1
+            style={{
+              color: "green",
+            }}
+          >
+            SAVE US,{" "}
+          </h1>
+          <h1
+            style={{
+              color: "blue",
+              marginLeft: 10,
+            }}
+          >
+            SAVE EARTH
+          </h1>
+        </div>
+
         <div class="fillSpace"></div>
         <ul>
           <li>
